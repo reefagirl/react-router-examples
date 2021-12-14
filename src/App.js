@@ -7,7 +7,7 @@ import ReactGa from "react-ga";
 
 function App() {
   useEffect(() => {
-    ReactGa.initialize("3101143100");
+    ReactGa.initialize("G-9RRKMVNVX3");
 
     //To record page view
     ReactGa.pageview("/");
