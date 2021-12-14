@@ -7,7 +7,9 @@ import ReactGa from "react-ga";
 
 function App() {
   useEffect(() => {
-    ReactGa.initialize("G-9RRKMVNVX3");
+    ReactGa.initialize("G-9RRKMVNVX3", {
+      gaOptions: { cookieFlags: "SameSite=None;Secure" },
+    });
     console.log("Send to GA");
     //To record page view
     ReactGa.pageview("/");
