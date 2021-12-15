@@ -3,16 +3,19 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Menu from "./Components/Menu";
 import Brand from "./Components/Brand";
 import Error from "./Components/Error";
-import ReactGa from "react-ga";
+//import ReactGa from "react-ga";
+import GA4React from "ga-4-react";
 
 function App() {
   useEffect(() => {
-    ReactGa.initialize("UA-214738679-2 ", {
-      gaOptions: { cookieFlags: "SameSite=None;Secure" },
-    });
+    // ReactGa.initialize("UA-214738679-2 ", {
+    //   gaOptions: { cookieFlags: "SameSite=None;Secure" },
+    // });
+    const ga4react = new GA4React("G-0HXM1DC6HY");
+    ga4react.initialize().then().catch();
     console.log("Send to GA");
     //To record page view
-    ReactGa.pageview("/");
+    ga4react.pageview("/");
   }, []);
 
   return (
