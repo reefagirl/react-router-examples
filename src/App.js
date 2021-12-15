@@ -7,7 +7,7 @@ import ReactGa from "react-ga";
 
 function App() {
   useEffect(() => {
-    ReactGa.initialize("G-9RRKMVNVX3", {
+    ReactGa.initialize("UA-214738679-2 ", {
       gaOptions: { cookieFlags: "SameSite=None;Secure" },
     });
     console.log("Send to GA");
