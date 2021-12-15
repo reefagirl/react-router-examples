@@ -11,7 +11,9 @@ function App() {
     // ReactGa.initialize("UA-214738679-2 ", {
     //   gaOptions: { cookieFlags: "SameSite=None;Secure" },
     // });
-    const ga4react = new GA4React("G-0HXM1DC6HY");
+    const ga4react = new GA4React("G-0HXM1DC6HY", {
+      cookie_flags: "SameSite=None;Secure",
+    });
     ga4react.initialize().then(
       (ga4) => {
         ga4.pageview("/");
