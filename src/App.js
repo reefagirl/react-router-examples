@@ -12,7 +12,15 @@ function App() {
     //   gaOptions: { cookieFlags: "SameSite=None;Secure" },
     // });
     const ga4react = new GA4React("G-0HXM1DC6HY");
-    ga4react.initialize().then().catch();
+    ga4react.initialize().then(
+      (ga4) => {
+        ga4.pageview("/");
+        ga4.gtag("event", "pageview", "/"); // or your custom gtag event
+      },
+      (err) => {
+        console.error(err);
+      }
+    );
     console.log("Send to GA4");
     //To record page view
     //ga4react.pageview("/");
