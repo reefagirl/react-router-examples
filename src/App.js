@@ -13,9 +13,9 @@ function App() {
     // });
     const ga4react = new GA4React("G-0HXM1DC6HY");
     ga4react.initialize().then().catch();
-    console.log("Send to GA");
+    console.log("Send to GA4");
     //To record page view
-    ga4react.pageview("/");
+    //ga4react.pageview("/");
   }, []);
 
   return (
