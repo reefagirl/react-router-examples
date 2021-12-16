@@ -25,7 +25,7 @@ function App() {
     // );
     console.log("Send to GA");
     //To record page view
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGa.pageview(window.location.pathname + window.location.search);
   }, []);
 
   return (
