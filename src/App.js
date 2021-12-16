@@ -17,7 +17,7 @@ function App() {
     ga4react.initialize().then().catch();
     console.log("Send to GA4");
     //To record page view
-    ga4react.pageview("/");
+    //ga4react.pageview("/");
   }, []);
 
   return (
