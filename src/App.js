@@ -12,7 +12,7 @@ function App() {
     //   gaOptions: { cookieFlags: "SameSite=None;Secure" },
     // });
     const ga4react = new GA4React("G-0HXM1DC6HY", {
-      cookie_flags: "SameSite=None;Secure",
+      cookie_flags: "max-age=7200;SameSite=None;Secure",
     });
     ga4react.initialize().then(
       (ga4) => {
@@ -25,7 +25,7 @@ function App() {
     );
     console.log("Send to GA4");
     //To record page view
-    //ga4react.pageview("/");
+    ga4react.pageview("/");
   }, []);
 
   return (
