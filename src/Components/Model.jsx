@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect }  from "react";
 import { useParams } from "react-router-dom";
 import { StyleSheet, css } from "aphrodite/no-important";
+import ReactGA from 'react-ga';
 
 const styles = StyleSheet.create({
 	container: {},
@@ -17,6 +18,17 @@ const styles = StyleSheet.create({
 
 const Model = () => {
 	const { model } = useParams();
+
+	
+	useEffect(() => {
+		ReactGA.event({
+			category: "Model",
+			action: 'Click the button on ' + model
+		})
+		console.log('Send info to GA click: ' + model)
+		
+	}, [model]);
+
 	return (
 		<div className={css(styles.container)}>
 			<h3 className={css(styles.h3)}>{model}</h3>

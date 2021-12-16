@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, css } from "aphrodite/no-important";
 import { useParams, useRouteMatch, Redirect } from "react-router-dom";
-
 import ALink from "./ALink";
 
 const MODELS_BY_BRAND = {
@@ -47,6 +46,7 @@ const SubMenu = () => {
 	if (!models) {
 		return <Redirect to="/error" />;
 	}
+
 
 	return (
 		<ul className={css(styles.ul)}>

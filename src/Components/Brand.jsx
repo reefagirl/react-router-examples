@@ -1,6 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { StyleSheet, css } from "aphrodite/no-important";
 import { useParams, useRouteMatch, Switch, Route } from "react-router-dom";
+import ReactGA from 'react-ga';
 
 import Model from "./Model";
 import SubMenu from "./SubMenu";
@@ -20,9 +21,21 @@ const styles = StyleSheet.create({
 	},
 });
 
+
 const Brand = () => {
 	const { brand } = useParams();
 	const { url } = useRouteMatch();
+
+	
+useEffect(() => {
+    ReactGA.event({
+		category: "Brands",
+		action: 'Click the button on ' + brand
+	})
+	console.log('Send info to GA click: ' + brand)
+	
+}, [brand]);
+
 	return (
 		<Fragment>
 			<h1 className={css(styles.h1)}>{brand}</h1>
